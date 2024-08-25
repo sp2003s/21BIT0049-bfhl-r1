@@ -11,7 +11,7 @@ function App() {
         e.preventDefault();
         try {
             const parsedData = JSON.parse(jsonInput);
-            const res = await axios.post('http://localhost:3000/bfhl', parsedData);
+            const res = await axios.post(`${process.env.REACT_APP_BACKEND_URL}`, parsedData);
             setResponse(res.data);
             setError('');
         } catch (err) {
